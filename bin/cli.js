@@ -13,24 +13,29 @@ program
   .version('1.0.0');
 
 program
-  .command('<mode>')
+  .command('init')
   .description('Создание проекта...')
-  .action((mode) => {
+  .action(async () => {
+    const questions = [
+      {
+        type: 'list',
+        name: 'mode',
+        message: 'Выберите режим:',
+        choices: ['export', 'standalone'],
+      },
+    ];
+
+    const { mode } = await inquirer.prompt(questions);
+
     console.log("mode", mode);
-    if (mode && ["standalone", "export"].includes(mode)) {
-      const source = path.join(__dirname, `../templates/${mode}`);
-      const target = ".";
+    const source = path.join(__dirname, `../templates/${mode}`);
+    const target = ".";
 
-      console.log("source", source);
+    console.log("source", source);
 
 
-      fs.copySync(source, target);
-      console.log(chalk.green("Создание проекта завершено"));
-    } else {
-      console.log(chalk.red("Не выбран режим. Передайте аргумент 'standalone' или 'export'"));
-      process.exit(1);
-    }
+    fs.copySync(source, target);
+    console.log(chalk.green("Создание проекта завершено"));
   });
 
-// Парсинг аргументов командной строки
 program.parse(process.argv);
