@@ -12,7 +12,9 @@ const program = new Command();
 program
   .name('started-template-cli')
   .action(async () => {
-    console.log(chalk.magenta.bold('Инициализация нового проекта'));
+    console.log(chalk.blue.bold('Инициализация нового проекта'));
+    console.log(chalk.blueBright.bold('Инициализация нового проекта'));
+    console.log(chalk.white.bgBlue.bold('Инициализация нового проекта'));
 
     const questions = [
       {
