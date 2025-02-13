@@ -7,7 +7,7 @@
     "started-template-cli": "bin/cli.js"
   },
   "scripts": {
-    "do:all-the-things": "npm-run-all do:a-thing do:another-thing",
+    "do:all-the-things": "started-template-cli do:a-thing do:another-thing",
     "do:a-thing": "echo 'thing'",
     "do:another-thing": "echo 'thing'"
   },
