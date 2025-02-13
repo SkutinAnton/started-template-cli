@@ -9,15 +9,11 @@ const { Command } = require('commander');
 
 const program = new Command();
 
-// program
-//   .name('started-template-cli')
-//   .description('Инициализация шаблона проекта')
-//   .version('1.0.0');
-
 program
   .name('started-template-cli')
-  .description('Создание проекта...')
   .action(async () => {
+    console.log(chalk.magenta.bold('Инициализация нового проекта'));
+
     const questions = [
       {
         type: 'list',
@@ -29,16 +25,11 @@ program
 
     const { mode } = await inquirer.prompt(questions);
     const template = mode.split(" ")[0];
-
-    console.log('mode', mode);
-    console.log('template', template);
     const source = path.join(__dirname, `../templates/${template}`);
     const target = '.';
 
-    console.log('source', source);
-
     fs.copySync(source, target);
-    console.log(chalk.green('Создание проекта завершено'));
+    console.log(chalk.green.bold('Создание проекта завершено'));
   });
 
 program.parse(process.argv);
