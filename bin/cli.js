@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-import fs from 'fs-extra';
-import path from 'path';
-import chalk from 'chalk';
-import inquirer from 'inquirer';
+const fs = require('fs-extra');
+const path = require('path');
+const chalk = require('chalk');
+const inquirer = require('inquirer');
 
-import { Command } from 'commander';
+const { Command } = require('commander');
 
 const program = new Command();
 
@@ -29,15 +29,14 @@ program
 
     const { mode } = await inquirer.prompt(questions);
 
-    console.log("mode", mode);
+    console.log('mode', mode);
     const source = path.join(__dirname, `../templates/${mode}`);
-    const target = ".";
+    const target = '.';
 
-    console.log("source", source);
-
+    console.log('source', source);
 
     fs.copySync(source, target);
-    console.log(chalk.green("Создание проекта завершено"));
+    console.log(chalk.green('Создание проекта завершено'));
   });
 
 program.parse(process.argv);
