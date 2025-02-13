@@ -1,7 +1,7 @@
 {
   "name": "started-template-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Инициализация шаблона проекта",
   "main": "index.js",
   "bin": {
     "started-template-cli": "bin/cli.js"
@@ -11,7 +11,9 @@
     "do:a-thing": "echo 'thing'",
     "do:another-thing": "echo 'thing'"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "fs-extra": "^11.3.0"
+  }
 }
