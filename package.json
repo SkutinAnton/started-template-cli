@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Инициализация шаблона проекта",
   "main": "index.js",
+  "type": "module",
   "bin": {
     "started-template-cli": "bin/cli.js"
   },
