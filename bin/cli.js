@@ -12,8 +12,6 @@ const program = new Command();
 program
   .name('started-template-cli')
   .action(async () => {
-    console.log(chalk.blue.bold('Инициализация нового проекта'));
-    console.log(chalk.blueBright.bold('Инициализация нового проекта'));
     console.log(chalk.white.bgBlue.bold('Инициализация нового проекта'));
 
     const questions = [
@@ -31,7 +29,7 @@ program
     const target = '.';
 
     fs.copySync(source, target);
-    console.log(chalk.green.bold('Создание проекта завершено'));
+    console.log(chalk.white.bgGreen.bold('Создание проекта завершено'));
   });
 
 program.parse(process.argv);
