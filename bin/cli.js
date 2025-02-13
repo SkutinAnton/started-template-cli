@@ -9,19 +9,19 @@ const { Command } = require('commander');
 
 const program = new Command();
 
+const questions = [
+  {
+    type: 'list',
+    name: 'mode',
+    message: 'Выберите режим:',
+    choices: ['export (SPA)', 'standalone (SSR)'],
+  },
+];
+
 program
   .name('started-template-cli')
   .action(async () => {
     console.log(chalk.blue.bold('Инициализация нового проекта'));
-
-    const questions = [
-      {
-        type: 'list',
-        name: 'mode',
-        message: 'Выберите режим:',
-        choices: ['export (SPA)', 'standalone (SSR)'],
-      },
-    ];
 
     const { mode } = await inquirer.prompt(questions);
     const template = mode.split(" ")[0];
