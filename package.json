@@ -1,0 +1,17 @@
+{
+  "name": "start-template-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "start-template-cli": "bin/cli.js"
+  },
+  "scripts": {
+    "do:all-the-things": "npm-run-all do:a-thing do:another-thing",
+    "do:a-thing": "echo 'thing'",
+    "do:another-thing": "echo 'thing'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
