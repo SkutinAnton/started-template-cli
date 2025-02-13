@@ -6,11 +6,6 @@
   "bin": {
     "started-template-cli": "bin/cli.js"
   },
-  "scripts": {
-    "do:all-the-things": "started-template-cli do:a-thing do:another-thing",
-    "do:a-thing": "echo 'thing'",
-    "do:another-thing": "echo 'thing'"
-  },
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^13.1.0",
