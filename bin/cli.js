@@ -9,13 +9,13 @@ const { Command } = require('commander');
 
 const program = new Command();
 
-program
-  .name('started-template-cli')
-  .description('Инициализация шаблона проекта')
-  .version('1.0.0');
+// program
+//   .name('started-template-cli')
+//   .description('Инициализация шаблона проекта')
+//   .version('1.0.0');
 
 program
-  .command('init')
+  .name('started-template-cli')
   .description('Создание проекта...')
   .action(async () => {
     const questions = [
@@ -23,14 +23,16 @@ program
         type: 'list',
         name: 'mode',
         message: 'Выберите режим:',
-        choices: ['export', 'standalone'],
+        choices: ['export (SPA)', 'standalone (SSR)'],
       },
     ];
 
     const { mode } = await inquirer.prompt(questions);
+    const template = mode.split(" ")[0];
 
     console.log('mode', mode);
-    const source = path.join(__dirname, `../templates/${mode}`);
+    console.log('template', template);
+    const source = path.join(__dirname, `../templates/${template}`);
     const target = '.';
 
     console.log('source', source);
