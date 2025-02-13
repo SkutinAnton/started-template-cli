@@ -12,7 +12,7 @@
     "do:another-thing": "echo 'thing'"
   },
   "dependencies": {
-    "chalk": "^5.4.1",
+    "chalk": "^4.1.2",
     "commander": "^13.1.0",
     "fs-extra": "^11.3.0",
     "inquirer": "^12.4.1"
