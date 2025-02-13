@@ -3,6 +3,8 @@
 import fs from 'fs-extra';
 import path from 'path';
 import chalk from 'chalk';
+import inquirer from 'inquirer';
+
 import { Command } from 'commander';
 
 const program = new Command();
