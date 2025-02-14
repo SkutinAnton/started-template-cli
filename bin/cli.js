@@ -49,6 +49,7 @@ const createTemplate = async () => {
   await deleteAllFiles();
 
   fs.copySync(templateDir, targetDir);
+
   console.log(chalk.green.bold("Создание проекта завершено"));
 };
 
